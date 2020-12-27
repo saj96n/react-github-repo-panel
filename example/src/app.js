@@ -44,7 +44,14 @@ class App extends React.Component {
     render() {
         return (
             <div className="demoWrapper">
-                <h1 align="center">react-github-repo-cards</h1>
+                <div className="demoInfoPanel">
+                    <h1 align="center">react-github-repo-cards</h1>
+                    <p align="center">
+                        <a href="https://www.npmjs.com/package/react-github-repo-cards" target="_blank">Npm</a>
+                        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        <a href="https://github.com/InfiniteSynthesis/react-github-repo-cards" target="_blank">Github</a>
+                    </p>
+                </div>
                 <div className="demoSettingPanel">
                     <label>
                         User Name:&nbsp;<input name="username"

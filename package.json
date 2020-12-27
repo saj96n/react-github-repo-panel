@@ -1,16 +1,21 @@
 {
   "name": "react-github-repo-cards",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A beautiful card that displays Github repository infos.",
+  "main": "lib/index.js",
+  "repository": "InfiniteSynthesis/react-github-repo-cards",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "compile": "npx babel src --out-dir lib"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
+  "author": "InfiniteSynthesis",
+  "keywords": ["react", "github-repo"],
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",

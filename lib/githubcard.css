@@ -10,7 +10,7 @@
     box-shadow: rgba(0, 0, 0, .14) 0 1px 3px;
 }
 
-.githubCard p {
+.githubCard p, span {
     color: #555;
     line-height: 1.2;
 }
@@ -107,7 +107,6 @@
 
 .githubCardFooterUpdate {
     font-size: 14px;
-    line-height: 1.2;
     text-transform: uppercase;
     float: right;
 }

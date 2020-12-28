@@ -1,6 +1,6 @@
 {
   "name": "react-github-repo-panel",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A beautiful card that displays Github repository infos.",
   "main": "lib/index.js",
   "repository": "InfiniteSynthesis/react-github-repo-panel",

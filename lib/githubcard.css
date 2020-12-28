@@ -8,6 +8,7 @@
     font-family: "Helvetica Nenu", Hevetica, Arial, sans-serif;
     color: #555;
     box-shadow: rgba(0, 0, 0, .14) 0 1px 3px;
+    box-sizing: content-box;
 }
 
 .githubCard p, span {

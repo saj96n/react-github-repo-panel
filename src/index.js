@@ -107,7 +107,7 @@ class RepoCard extends React.Component {
 
         let languageSpan = this.state.language === undefined
             ? undefined : <span className="githubCardHeaderStatus">
-                <div style={{ backgroundColor: languageColor }} /><strong>{this.state.language}</strong>
+                <span style={{ backgroundColor: languageColor }} /><strong>{this.state.language}</strong>
             </span>;
 
         return (<div className="githubCard"

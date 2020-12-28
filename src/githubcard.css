@@ -46,7 +46,7 @@
     color: #797979;
 }
 
-.githubCardHeaderStatus > div {
+.githubCardHeaderStatus > span {
     width: 1em;
     height: 1em;
     margin: 0 5px;

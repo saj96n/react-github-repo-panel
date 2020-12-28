@@ -50,3 +50,5 @@ A beautiful card that displays Github repository infos.
 | `center` | Boolean | false | If card is aligned center. |
 | `squareAvatar` | Boolean | false | If avatar is displayed with square outline. |
 | `descriptionLine` | Number | 2 | The maximum line of repo description. |
+| `showLanguage` | Boolean | true | If the  repo language is displayed. |
+| `showLicense` | Boolean | true | If the  repo license is displayed. |

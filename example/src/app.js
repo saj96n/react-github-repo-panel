@@ -12,6 +12,8 @@ class App extends React.Component {
             center: true,
             squareAvatar: false,
             descriptionLine: 2,
+            showLanguage: true,
+            showLicense: true,
             repocard: undefined,
             key: 0
         };
@@ -28,8 +30,7 @@ class App extends React.Component {
     }
 
     handleSubmit = (event) => {
-        let key = this.state.key + 1
-        console.log(this.state)
+        let key = this.state.key + 1;
         this.setState({
             key: key,
             repocard: <RepoCard key={key}
@@ -37,7 +38,9 @@ class App extends React.Component {
                 reponame={this.state.reponame}
                 center={this.state.center}
                 squareAvatar={this.state.squareAvatar}
-                descriptionLine={this.state.descriptionLine} />
+                descriptionLine={this.state.descriptionLine}
+                showLanguage={this.state.showLanguage}
+                showLicense={this.state.showLicense} />
         });
     }
 
@@ -75,6 +78,16 @@ class App extends React.Component {
                             name="squareAvatar"
                             type="checkbox"
                             checked={this.state.squareAvatar}
+                            onChange={this.handleInputChange} />
+                        &nbsp;&nbsp;&nbsp;&nbsp;Show Language: <input
+                            name="showLanguage"
+                            type="checkbox"
+                            checked={this.state.showLanguage}
+                            onChange={this.handleInputChange} />
+                        &nbsp;&nbsp;&nbsp;&nbsp;Show License: <input
+                            name="showLicense"
+                            type="checkbox"
+                            checked={this.state.showLicense}
                             onChange={this.handleInputChange} />
                     </label>
                     <label>

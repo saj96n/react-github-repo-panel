@@ -10,6 +10,11 @@
     box-shadow: rgba(0, 0, 0, .14) 0 1px 3px;
 }
 
+.githubCard p {
+    color: #555;
+    line-height: 1.2;
+}
+
 .githubCard a {
     text-decoration: none;
     outline: 0;
@@ -27,7 +32,6 @@
     width: 48px;
     height: 48px;
     margin-right: 9px;
-    /* border-radius: 50%; */
 }
 
 .githubCardRepoName {
@@ -103,6 +107,7 @@
 
 .githubCardFooterUpdate {
     font-size: 14px;
+    line-height: 1.2;
     text-transform: uppercase;
     float: right;
 }

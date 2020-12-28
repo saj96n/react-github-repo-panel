@@ -45,11 +45,11 @@ class App extends React.Component {
         return (
             <div className="demoWrapper">
                 <div className="demoInfoPanel">
-                    <h1 align="center">react-github-repo-cards</h1>
+                    <h1 align="center">react-github-repo-panel</h1>
                     <p align="center">
-                        <a href="https://www.npmjs.com/package/react-github-repo-cards" target="_blank">Npm</a>
+                        <a href="https://www.npmjs.com/package/react-github-repo-panel" target="_blank">Npm</a>
                         &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        <a href="https://github.com/InfiniteSynthesis/react-github-repo-cards" target="_blank">Github</a>
+                        <a href="https://github.com/InfiniteSynthesis/react-github-repo-panel" target="_blank">Github</a>
                     </p>
                 </div>
                 <div className="demoSettingPanel">

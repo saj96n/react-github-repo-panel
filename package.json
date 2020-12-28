@@ -1,9 +1,9 @@
 {
-  "name": "react-github-repo-cards",
+  "name": "react-github-repo-panel",
   "version": "1.0.0",
   "description": "A beautiful card that displays Github repository infos.",
   "main": "lib/index.js",
-  "repository": "InfiniteSynthesis/react-github-repo-cards",
+  "repository": "InfiniteSynthesis/react-github-repo-panel",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open development",

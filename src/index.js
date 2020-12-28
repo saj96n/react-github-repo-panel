@@ -79,7 +79,7 @@ class RepoCard extends React.Component {
             && this.state.language !== undefined
             && this.state.language !== null;
 
-        let languageSpan = renderLanguage ? <span className="githubCardHeaderStatus">
+        let languageSpan = renderLanguage ? <span key="1" className="githubCardHeaderStatus">
             <span style={{ backgroundColor: githubColors[this.state.language] }} /><strong>{this.state.language}</strong>
         </span> : undefined;
 
@@ -88,20 +88,20 @@ class RepoCard extends React.Component {
             && this.state.license !== "NOASSERTION";
 
         let licenseSpan = renderLicense
-            ? <span className="githubCardHeaderStatus">
+            ? <span key="2" className="githubCardHeaderStatus">
                 {licenseSVG}<strong>{this.state.license}</strong>
             </span>
             : undefined;
 
         let secondLine = ((renderLanguage && renderLicense && (this.state.repoName.length > 15))
             || ((renderLanguage || renderLicense) && (this.state.repoName.length > 20)))
-            ? <p style={{ marginTop: '-7px', transform: 'translateX(-3px)' }}>
+            ? <p className="githubCardP" style={{ marginTop: '-7px', transform: 'translateX(-3px)' }}>
                 {languageSpan}
                 {licenseSpan}
             </p>
             : undefined;
 
-        let firstLineChildren = [<a className="githubCardRepoName"
+        let firstLineChildren = [<a className="githubCardRepoName" key="0"
             href={repoLink} target="_blank">
             <strong >{this.state.repoName}</strong>
         </a>];
@@ -121,9 +121,9 @@ class RepoCard extends React.Component {
             </a>
             <a className="githubCardBottonStar"
                 href={repoLink} target="_blank">Star {githubSVG}</a>
-            <p>{firstLineChildren}</p>
+            <p className="githubCardP">{firstLineChildren}</p>
             {secondLine}
-            <p>Created by&nbsp;
+            <p className="githubCardP">Created by&nbsp;
                 <a className="githubCardCreator"
                     href={userLink}
                     target="_blank">{this.props.username}</a>
@@ -133,7 +133,7 @@ class RepoCard extends React.Component {
 
     renderCardContent() {
         return (<div className="githubCardContent">
-            <p style={{ WebkitLineClamp: this.props.descriptionLine }}>{this.state.description}</p>
+            <p className="githubCardP" style={{ WebkitLineClamp: this.props.descriptionLine }}>{this.state.description}</p>
         </div>
         );
     }

@@ -11,7 +11,7 @@
     box-sizing: content-box;
 }
 
-.githubCard p, span {
+.githubCardP {
     color: #555;
     line-height: 1.2;
 }
@@ -110,12 +110,16 @@
     font-size: 14px;
     padding-right: 10px;
     text-transform: uppercase;
+    color: #555;
+    line-height: 1.2;
 }
 
 .githubCardFooterUpdate {
     font-size: 14px;
     text-transform: uppercase;
     float: right;
+    color: #555;
+    line-height: 1.2;
 }
 
 .githubCardSVG {

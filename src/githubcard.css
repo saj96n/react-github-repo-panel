@@ -6,14 +6,8 @@
     border-radius: 5px;
     background-color: white;
     font-family: "Helvetica Nenu", Hevetica, Arial, sans-serif;
-    color: #555;
     box-shadow: rgba(0, 0, 0, .14) 0 1px 3px;
     box-sizing: content-box;
-}
-
-.githubCardP {
-    color: #555;
-    line-height: 1.2;
 }
 
 .githubCard a {
@@ -21,18 +15,20 @@
     outline: 0;
 }
 
-.githubCardAvatar {
-    float: left;
-}
-
-.githubCardHeader > p {
+.githubCard .githubCardP {
     margin: 3px 0 4px 0;
+    color: #555;
+    line-height: 1.2;
     display: -webkit-box !important;
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-all;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+}
+
+.githubCardAvatar {
+    float: left;
 }
 
 .githubCardAvatar > img {
@@ -91,9 +87,10 @@
     padding: 6px 0 10px;
 }
 
-.githubCardContent > p {
+.githubCardContent > .githubCardContentP {
     margin: 0 5px 0 0;
     font: 18px/24px Georgia, "Times New Roman", Palatino, serif;
+    color: #555;
     display: -webkit-box !important;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -106,7 +103,7 @@
     padding: 8px 0 6px;
 }
 
-.githubCardFooterStatus {
+.githubCardFooter > .githubCardFooterStatus {
     font-size: 14px;
     padding-right: 10px;
     text-transform: uppercase;
@@ -114,7 +111,7 @@
     line-height: 1.2;
 }
 
-.githubCardFooterUpdate {
+.githubCardFooter > .githubCardFooterUpdate {
     font-size: 14px;
     text-transform: uppercase;
     float: right;

@@ -133,7 +133,7 @@ class RepoCard extends React.Component {
 
     renderCardContent() {
         return (<div className="githubCardContent">
-            <p className="githubCardP" style={{ WebkitLineClamp: this.props.descriptionLine }}>{this.state.description}</p>
+            <p className="githubCardContentP" style={{ WebkitLineClamp: this.props.descriptionLine }}>{this.state.description}</p>
         </div>
         );
     }

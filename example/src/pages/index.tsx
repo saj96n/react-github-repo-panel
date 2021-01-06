@@ -4,7 +4,7 @@ import { RepoCard } from "../../../src";
 
 const repo = {
   description: "A beautiful card that displays Github repository infos.",
-  name: "react-github-repo-panel",
+  name: "react-repo-widget",
   stargazerCount: 0,
   watchers: { totalCount: 0 },
   pushedAt: "2020-12-28T19:58:07Z",
@@ -47,16 +47,13 @@ function App() {
         <h1>react-github-repo-panel</h1>
         <p>
           <a
-            href="https://www.npmjs.com/package/react-github-repo-panel"
+            href="https://www.npmjs.com/package/react-repo-widget"
             target="_blank"
           >
             Npm
           </a>
           &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          <a
-            href="https://github.com/InfiniteSynthesis/react-github-repo-panel"
-            target="_blank"
-          >
+          <a href="https://github.com/saj96n/react-repo-widget" target="_blank">
             Github
           </a>
         </p>

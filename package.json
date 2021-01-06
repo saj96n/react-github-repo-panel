@@ -13,7 +13,7 @@
     "build:cjs": "BUILD_TYPE=cjs babel src --extensions '.ts,.tsx' --copy-files --out-dir dist-cjs",
     "build:esm": "babel src --extensions '.ts,.tsx' --copy-files --out-dir dist-esm",
     "build:types": "tsc --emitDeclarationOnly",
-    "build:example": "cd example && npm run build",
+    "build:example": "cd example && gatsby build --prefix-paths",
     "build": "run-p build:cjs build:esm build:types",
     "prebuild": "rimraf dist-*",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",

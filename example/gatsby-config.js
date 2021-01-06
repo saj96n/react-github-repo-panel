@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/react-repo-widget`,
   siteMetadata: {
     title: "example",
   },

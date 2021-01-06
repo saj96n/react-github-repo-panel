@@ -1,6 +1,6 @@
-# react-github-repo-panel ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg) ![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-pink.svg)
+# react-repo-widget ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg) ![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-pink.svg)
 
-![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)
+![forthebadge](https://forthebadge.com/images/badges/made-with-typescript.svg)
 ![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)
 
 A beautiful card that displays Github repository infos.
@@ -9,13 +9,13 @@ A beautiful card that displays Github repository infos.
 
 ## Demo Show
 
-- **Online** [Demo Webside](https://infinitesynthesis.github.io/react-github-repo-panel/)
+- **Online** [Demo Webside](https://saj96n.github.io/react-repo-widget/)
 
 - **Local**
 
   ```shell
-  git clone https://github.com/InfiniteSynthesis/react-github-repo-panel.git
-  cd react-github-repo-panel
+  git clone https://github.com/saj96n/react-repo-widget.git
+  cd react-repo-widget
   npm i
   npm start
   ```
@@ -27,13 +27,13 @@ A beautiful card that displays Github repository infos.
 1. install
 
    ```shell
-   npm i react-github-repo-panel
+   npm i react-repo-widget
    ```
 
 1. import
 
    ```javascript
-   import import { RepoCard } from 'react-github-repo-panel'
+   import import { RepoCard } from 'react-repo-widget'
    ```
 
 1. use

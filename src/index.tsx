@@ -134,6 +134,8 @@ function solveCount(count) {
     countString = Math.round(countNumber / 1000000) + "M";
   } else if (countNumber > 1000) {
     countString = Math.round(countNumber / 1000) + "K";
+  } else {
+    countString = countNumber.toString()
   }
 
   return countString;

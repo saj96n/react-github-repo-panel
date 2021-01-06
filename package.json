@@ -1,6 +1,6 @@
 {
   "name": "react-repo-widget",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A beautiful card that displays Github repository infos.",
   "keywords": [
     "react",

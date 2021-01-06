@@ -38,15 +38,14 @@ A beautiful card that displays Github repository infos.
 
 2. use
     ```javascript
-    <RepoCard username="InfiniteSynthesis" reponame="react-github-repo-panel" />
+    <RepoCard repo={repoData} />
     ```
 
 ## Settings 🔨
 
 | Parameter   | Type           | Default  | Description|
 | :----------: |:---:| :---:| :------------- |
-| `username` | String | "" | User name of this repository. |
-| `reponame` | String | "" | Name of the repository. |
+| `repo` | Object | "" | Repository data. |
 | `center` | Boolean | false | If card is aligned center. |
 | `squareAvatar` | Boolean | false | If avatar is displayed with square outline. |
 | `descriptionLine` | Number | 2 | The maximum line of repo description. |

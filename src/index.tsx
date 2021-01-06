@@ -12,7 +12,7 @@ import { githubColors } from "./colors";
 import styled from "styled-components";
 
 const Card = styled.div`
-  width: 400px;
+  max-width: 360px;
   padding: 8px 8px 0;
   border: thin solid #eee;
   border-color: #eee #ddd #bbb;
@@ -64,7 +64,7 @@ const StarButton = styled.a`
   border: 1px solid #d4d4d4;
   border-radius: 3px;
   float: right;
-  font-size: 13px;
+  font-size: 0.9rem;
   font-weight: 700;
   line-height: 14px;
   background-color: #e6e6e6;
@@ -72,7 +72,7 @@ const StarButton = styled.a`
 `;
 
 const HeaderStatus = styled.span`
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #797979;
   & > span {
     width: 1em;
@@ -89,7 +89,7 @@ const HeaderStatus = styled.span`
 
 const RepoName = styled.a`
   margin-right: 5px;
-  font-size: 18px;
+  font-size: 1.1rem;
   line-height: 1.4;
   color: #292f33;
 `;
@@ -98,7 +98,7 @@ const Content = styled.div`
   padding: 6px 0 10px;
   & > p {
     margin: 0 5px 0 0;
-    font: 18px/24px Georgia, "Times New Roman", Palatino, serif;
+    font: 1.1rem Georgia, "Times New Roman", Palatino, serif;
     color: #555;
     display: -webkit-box !important;
     overflow: hidden;
@@ -111,18 +111,23 @@ const Content = styled.div`
 const Footer = styled.div`
   border-top: thin solid #eee;
   padding: 8px 0 6px;
+  display: flex;
 `;
 
 const FooterStatus = styled.span`
-  font-size: 14px;
+  font-size: 0.75rem;
   padding-right: 10px;
   text-transform: uppercase;
   color: #555;
   line-height: 1.2;
 `;
 
+const Spacer = styled.div`
+  flex-grow: 1;
+`;
+
 const FooterDate = styled(FooterStatus)`
-  float: right;
+  padding-right: 0;
 `;
 
 function solveCount(count) {
@@ -135,7 +140,7 @@ function solveCount(count) {
   } else if (countNumber > 1000) {
     countString = Math.round(countNumber / 1000) + "K";
   } else {
-    countString = countNumber.toString()
+    countString = countNumber.toString();
   }
 
   return countString;
@@ -152,7 +157,8 @@ function RepoCard({
   const avatar_url = repo.owner.avatarUrl;
   const description = repo.description;
   const forks_count = repo.forks.totalCount;
-  const language = repo.primaryLanguage === null ? "" : repo.primaryLanguage.name;
+  const language =
+    repo.primaryLanguage === null ? "" : repo.primaryLanguage.name;
   const license =
     repo.licenseInfo === null ? undefined : repo.licenseInfo.spdxId;
   const repoName = repo.name;
@@ -274,6 +280,7 @@ function RepoCard({
         <FooterStatus>
           {forkSVG} Forks <strong>{forks_count}</strong>
         </FooterStatus>
+        <Spacer />
         <FooterDate>
           {updateSVG} {pushed_at}
         </FooterDate>

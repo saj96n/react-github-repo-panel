@@ -1,15 +1,14 @@
 {
-    "compilerOptions": {
-        "baseUrl": "./",
-        "declaration": true,
-        "esModuleInterop": true,
-        "jsx": "react",
-        "moduleResolution": "Node",
-        "outDir": "./dist-types",
-        "strict": true,
-        "target": "ESNext"
-    },
-    "include": [
-        "src"
-    ]
+  "compilerOptions": {
+    "baseUrl": "./",
+    "declaration": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "jsx": "react-jsx",
+    "moduleResolution": "Node",
+    "outDir": "./dist-types",
+    "strict": true,
+    "target": "ESNext"
+  },
+  "include": ["src"]
 }

@@ -2,60 +2,60 @@
   "name": "react-repo-widget",
   "version": "1.0.0",
   "description": "A beautiful card that displays Github repository infos.",
-  "main": "dist-cjs/index.js",
-  "module": "dist-esm/index.js",
-  "types": "dist-types/index.d.ts",
-  "sideEffects": false,
-  "repository": "saj96n/react-repo-widget",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open development",
-    "build:cjs": "BUILD_TYPE=cjs babel src --extensions '.ts,.tsx' --copy-files --out-dir dist-cjs",
-    "build:esm": "babel src --extensions '.ts,.tsx' --copy-files --out-dir dist-esm",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build:example": "cd example && gatsby build --prefix-paths",
-    "build": "run-p build:cjs build:esm build:types",
-    "prebuild": "rimraf dist-*",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "deploy": "gh-pages -d example/public",
-    "publish-demo": "npm run build && npm run build:example && npm run deploy"
-  },
-  "author": "saj96n",
   "keywords": [
     "react",
     "github-repo"
   ],
+  "repository": "saj96n/react-repo-widget",
   "license": "MIT",
+  "author": "saj96n",
+  "sideEffects": false,
+  "main": "dist-cjs/index.js",
+  "module": "dist-esm/index.js",
+  "types": "dist-types/index.d.ts",
   "files": [
     "dist-cjs",
     "dist-esm",
     "dist-types"
   ],
-  "dependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
-    "@babel/preset-typescript": "^7.12.7",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "prop-types": "^15.7.2",
-    "typescript": "^4.1.3"
+  "scripts": {
+    "prebuild": "rimraf dist-*",
+    "build": "run-p build:cjs build:esm build:types",
+    "build:cjs": "BUILD_TYPE=cjs babel src --extensions '.ts,.tsx' --copy-files --out-dir dist-cjs",
+    "build:esm": "babel src --extensions '.ts,.tsx' --copy-files --out-dir dist-esm",
+    "build:example": "cd example && gatsby build --prefix-paths",
+    "build:types": "tsc --emitDeclarationOnly",
+    "deploy": "gh-pages -d example/public",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "publish-demo": "npm run build && npm run build:example && npm run deploy",
+    "start": "webpack serve --open development",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "peerDependencies": {
-    "react": "^16.8 || ^17",
-    "react-dom": "^16.8 || ^17"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
-    "css-loader": "^5.0.1",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/styled-components": "^5.1.7",
     "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.5.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rimraf": "^3.0.2",
-    "style-loader": "^2.0.0"
+    "styled-components": "^5.2.1",
+    "typescript": "^4.1.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8 || ^17",
+    "react-dom": "^16.8 || ^17",
+    "styled-components": "^5.2.1"
   }
 }

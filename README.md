@@ -9,7 +9,7 @@ A beautiful card that displays Github repository infos.
 
 ## Demo Show
 
-- **Online** [Demo Webside](https://saj96n.github.io/react-repo-widget/)
+- **Online** [Demo Website](https://saj96n.github.io/react-repo-widget/)
 
 - **Local**
 
@@ -39,6 +39,23 @@ A beautiful card that displays Github repository infos.
 1. use
    ```javascript
    <RepoCard repo={repoData} />
+   ```
+   repo prop data structure
+   ```ts
+   repo: {
+    name: string;
+    owner: {
+      avatarUrl: string;
+      login: string;
+    };
+    description: string;
+    forks: { totalCount: number };
+    primaryLanguage: { name: string };
+    licenseInfo: { spdxId: string };
+    pushedAt: string;
+    stargazerCount: number;
+    watchers: { totalCount: number };
+    }
    ```
 
 ## Settings 🔨

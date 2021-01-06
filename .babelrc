@@ -1,14 +1,16 @@
-{
-    "presets": [
-        "@babel/preset-env",
-        "@babel/preset-react"
-    ],
-    "plugins": [
-        [
-            "@babel/plugin-proposal-class-properties",
-            {
-                "loose": true
-            }
-        ]
-    ]
-}
+const commonPresets = ["@babel/preset-react", "@babel/preset-typescript"];
+
+module.exports = (api) => {
+  return api.env("test")
+    ? {
+        presets: ["@babel/preset-env", ...commonPresets],
+      }
+    : {
+        plugins: [
+          ...(process.env.BUILD_TYPE === "cjs"
+            ? ["@babel/plugin-transform-modules-commonjs"]
+            : []),
+        ],
+        presets: commonPresets,
+      };
+};

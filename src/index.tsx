@@ -150,13 +150,13 @@ function RepoCard({
   const avatar_url = repo.owner.avatarUrl;
   const description = repo.description;
   const forks_count = repo.forks.totalCount;
-  const language = repo.primaryLanguage?.name;
+  const language = repo.primaryLanguage.name || "";
   const license =
     repo.licenseInfo === null ? undefined : repo.licenseInfo.spdxId;
   const repoName = repo.name;
   const stars_count = solveCount(repo.stargazerCount);
   const pushed_at = repo.pushedAt.slice(2, 10);
-  const watchers_count = solveCount(repo.watchers?.totalCount);
+  const watchers_count = solveCount(repo.watchers.totalCount);
   const username = repo.owner.login;
 
   const renderCardHeader = useCallback(() => {
@@ -301,11 +301,11 @@ interface RepoCardProps {
     };
     description: string;
     forks: { totalCount: number };
-    primaryLanguage: { name: string };
+    primaryLanguage: { name?: string };
     licenseInfo: { spdxId: string };
     pushedAt: string;
     stargazerCount: number;
-    watchers: { totalCount: number };
+    watchers: { totalCount?: number };
   };
   center: boolean;
   squareAvatar: boolean;

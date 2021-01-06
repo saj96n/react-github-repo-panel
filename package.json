@@ -1,6 +1,6 @@
 {
   "name": "react-repo-widget",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A beautiful card that displays Github repository infos.",
   "keywords": [
     "react",
@@ -31,7 +31,9 @@
     "start": "webpack serve --open development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "styled-components": "^5.2.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
@@ -50,12 +52,10 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rimraf": "^3.0.2",
-    "styled-components": "^5.2.1",
     "typescript": "^4.1.3"
   },
   "peerDependencies": {
     "react": "^16.8 || ^17",
-    "react-dom": "^16.8 || ^17",
-    "styled-components": "^5.2.1"
+    "react-dom": "^16.8 || ^17"
   }
 }

@@ -205,7 +205,7 @@ function RepoCard({
         </p>
       ) : undefined;
     let firstLineChildren = [
-      <RepoName key="0" href={repoLink} target="_blank">
+      <RepoName key="0" href={repoLink} target="_blank" rel="noopener">
         <strong>{repoName}</strong>
       </RepoName>,
     ];
@@ -223,6 +223,7 @@ function RepoCard({
           }}
           href={userLink}
           target="_blank"
+          rel="noopener"
         >
           <img
             src={`${avatar_url}&s=144`}
@@ -232,14 +233,14 @@ function RepoCard({
             }}
           />
         </Avatar>
-        <StarButton href={repoLink} target="_blank">
+        <StarButton href={repoLink} target="_blank" rel="noopener">
           Star {githubSVG}
         </StarButton>
         <p className="githubCardP">{firstLineChildren}</p>
         {secondLine}
         <p className="githubCardP">
           Created by&nbsp;
-          <User href={userLink} target="_blank">
+          <User href={userLink} target="_blank" rel="noopener">
             {username}
           </User>
         </p>

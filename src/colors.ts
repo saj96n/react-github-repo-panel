@@ -13,5 +13,5 @@ export const githubColors = {
   Python: "#3572A5",
   PHP: "#4F5D95",
   TeX: "#3D6117",
-  TypeScript: "#2b7489"
+  TypeScript: "#2b7489",
 };

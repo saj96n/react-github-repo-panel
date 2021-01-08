@@ -73,7 +73,7 @@ const StarButton = styled.a`
 
 const HeaderStatus = styled.span`
   font-size: 0.75rem;
-  color: #797979;
+  color: #5a6067;
   & > span {
     width: 1em;
     height: 1em;
@@ -225,7 +225,8 @@ function RepoCard({
           target="_blank"
         >
           <img
-            src={avatar_url}
+            src={`${avatar_url}&s=144`}
+            alt={`@${username}`}
             style={{
               borderRadius: squareAvatar ? "5px" : "50%",
             }}

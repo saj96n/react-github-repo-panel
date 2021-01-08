@@ -9,6 +9,7 @@ export const licenseSVG = (
     data-icon="balance-scale"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
+    height="1em"
     viewBox="0 0 640 512"
     data-fa-i2svg=""
   >
@@ -28,6 +29,7 @@ export const githubSVG = (
     data-icon="github"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
+    height="1em"
     viewBox="0 0 496 512"
     data-fa-i2svg=""
   >
@@ -47,6 +49,7 @@ export const watchSVG = (
     data-icon="eye"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
+    height="1em"
     viewBox="0 0 576 512"
     data-fa-i2svg=""
   >
@@ -66,6 +69,7 @@ export const starSVG = (
     data-icon="star"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
+    height="1em"
     viewBox="0 0 576 512"
     data-fa-i2svg=""
   >
@@ -85,6 +89,7 @@ export const forkSVG = (
     data-icon="code-branch"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
+    height="1em"
     viewBox="0 0 384 512"
     data-fa-i2svg=""
   >
@@ -104,6 +109,7 @@ export const updateSVG = (
     data-icon="history"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
+    height="1em"
     viewBox="0 0 512 512"
     data-fa-i2svg=""
   >

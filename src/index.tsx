@@ -37,10 +37,7 @@ const Card = styled.div`
     -webkit-line-clamp: 1;
   }
   .githubCardSVG {
-    height: 1em;
-    display: inline-block;
     vertical-align: -0.125em;
-    overflow: visible;
   }
 `;
 
@@ -66,9 +63,13 @@ const StarButton = styled.a`
   float: right;
   font-size: 0.9rem;
   font-weight: 700;
-  line-height: 14px;
   background-color: #e6e6e6;
   background-image: linear-gradient(#fafafa, #eaeaea);
+  display: flex;
+  align-items: center;
+  > svg {
+    margin-left: 5px;
+  }
 `;
 
 const HeaderStatus = styled.span`

@@ -1,0 +1,32 @@
+export const card: string;
+export const cardP: string;
+export const avatar: string;
+export const repo: string;
+export const headerStatus: string;
+export const creator: string;
+export const buttonStar: string;
+export const content: string;
+export const contentP: string;
+export const footer: string;
+export const footerStatus: string;
+export const update: string;
+export const svg: string;
+export const spacer: string;
+interface Namespace {
+  card: string;
+  cardP: string;
+  avatar: string;
+  repo: string;
+  headerStatus: string;
+  creator: string;
+  buttonStar: string;
+  content: string;
+  contentP: string;
+  footer: string;
+  footerStatus: string;
+  update: string;
+  svg: string;
+  spacer: string;
+}
+declare const indexModule: Namespace;
+export default indexModule;

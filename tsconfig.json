@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
-    "declaration": true,
     "esModuleInterop": true,
     "noImplicitAny": false,
     "jsx": "react-jsx",
     "moduleResolution": "Node",
-    "outDir": "./dist-types",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "strict": true,
     "target": "ESNext"
   },

@@ -9,127 +9,9 @@ import {
 } from "./svglib";
 import { githubColors } from "./colors";
 
-import styled from "styled-components";
+// import styled from "styled-components";
 
-const Card = styled.div`
-  max-width: 360px;
-  padding: 8px 8px 0;
-  border: thin solid #eee;
-  border-color: #eee #ddd #bbb;
-  border-radius: 5px;
-  background-color: white;
-  font-family: "Helvetica Nenu", Hevetica, Arial, sans-serif;
-  box-shadow: rgba(0, 0, 0, 0.14) 0 1px 3px;
-  box-sizing: content-box;
-  a {
-    text-decoration: none;
-    outline: 0;
-  }
-  .githubCardP {
-    margin: 3px 0 4px 0;
-    color: #555;
-    line-height: 1.2;
-    display: -webkit-box !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-break: break-all;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-  }
-  .githubCardSVG {
-    vertical-align: -0.125em;
-  }
-`;
-
-const Avatar = styled.a`
-  float: left;
-  & > img {
-    width: 48px;
-    height: 48px;
-    margin-right: 9px;
-  }
-`;
-
-const User = styled.a`
-  color: #707070;
-`;
-
-const StarButton = styled.a`
-  padding: 4px 8px 4px 7px;
-  color: #555;
-  text-shadow: 0 1px 0 #fff;
-  border: 1px solid #d4d4d4;
-  border-radius: 3px;
-  float: right;
-  font-size: 0.9rem;
-  font-weight: 700;
-  background-color: #e6e6e6;
-  background-image: linear-gradient(#fafafa, #eaeaea);
-  display: flex;
-  align-items: center;
-  > svg {
-    margin-left: 5px;
-  }
-`;
-
-const HeaderStatus = styled.span`
-  font-size: 0.75rem;
-  color: #5a6067;
-  & > span {
-    width: 1em;
-    height: 1em;
-    margin: 0 5px;
-    border-radius: 50%;
-    display: inline-block;
-    vertical-align: -0.067em;
-  }
-  & > svg {
-    margin: 0 5px;
-  }
-`;
-
-const RepoName = styled.a`
-  margin-right: 5px;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  color: #292f33;
-`;
-
-const Content = styled.div`
-  padding: 6px 0 10px;
-  & > p {
-    margin: 0 5px 0 0;
-    font: 1.1rem Georgia, "Times New Roman", Palatino, serif;
-    color: #555;
-    display: -webkit-box !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-break: break-all;
-    -webkit-box-orient: vertical;
-  }
-`;
-
-const Footer = styled.div`
-  border-top: thin solid #eee;
-  padding: 8px 0 6px;
-  display: flex;
-`;
-
-const FooterStatus = styled.span`
-  font-size: 0.75rem;
-  padding-right: 10px;
-  text-transform: uppercase;
-  color: #555;
-  line-height: 1.2;
-`;
-
-const Spacer = styled.div`
-  flex-grow: 1;
-`;
-
-const FooterDate = styled(FooterStatus)`
-  padding-right: 0;
-`;
+import styles from "./index.module.css";
 
 function solveCount(count) {
   const countNumber = parseInt(count);
@@ -174,28 +56,28 @@ function RepoCard({
     let renderLanguage =
       showLanguage && language !== undefined && language !== null;
     let languageSpan = renderLanguage ? (
-      <HeaderStatus key="1">
+      <span className={styles.headerStatus} key="1">
         <span
           style={{
             backgroundColor: githubColors[language],
           }}
         />
         <strong>{language}</strong>
-      </HeaderStatus>
+      </span>
     ) : null;
     let renderLicense =
       showLicense && license !== undefined && license !== "NOASSERTION";
     let licenseSpan = renderLicense ? (
-      <HeaderStatus key="2">
+      <span className={styles.headerStatus} key="2">
         {licenseSVG}
         <strong>{license}</strong>
-      </HeaderStatus>
+      </span>
     ) : null;
     let secondLine =
       (renderLanguage && renderLicense && repoName.length > 15) ||
       ((renderLanguage || renderLicense) && repoName.length > 20) ? (
         <p
-          className="githubCardP"
+          className={styles.cardP}
           style={{
             marginTop: "-7px",
             transform: "translateX(-3px)",
@@ -206,9 +88,15 @@ function RepoCard({
         </p>
       ) : undefined;
     let firstLineChildren = [
-      <RepoName key="0" href={repoLink} target="_blank" rel="noopener">
+      <a
+        className={styles.repo}
+        key="0"
+        href={repoLink}
+        target="_blank"
+        rel="noopener"
+      >
         <strong>{repoName}</strong>
-      </RepoName>,
+      </a>,
     ];
 
     if (secondLine === undefined) {
@@ -218,7 +106,8 @@ function RepoCard({
 
     return (
       <div>
-        <Avatar
+        <a
+          className={styles.avatar}
           style={{
             marginTop: secondLine ? "7px" : "",
           }}
@@ -233,17 +122,27 @@ function RepoCard({
               borderRadius: squareAvatar ? "5px" : "50%",
             }}
           />
-        </Avatar>
-        <StarButton href={repoLink} target="_blank" rel="noopener">
+        </a>
+        <a
+          className={styles.buttonStar}
+          href={repoLink}
+          target="_blank"
+          rel="noopener"
+        >
           Star {githubSVG}
-        </StarButton>
-        <p className="githubCardP">{firstLineChildren}</p>
+        </a>
+        <p className={styles.cardP}>{firstLineChildren}</p>
         {secondLine}
-        <p className="githubCardP">
+        <p className={styles.cardP}>
           Created by&nbsp;
-          <User href={userLink} target="_blank" rel="noopener">
+          <a
+            className={styles.creator}
+            href={userLink}
+            target="_blank"
+            rel="noopener"
+          >
             {username}
-          </User>
+          </a>
         </p>
       </div>
     );
@@ -259,40 +158,41 @@ function RepoCard({
   ]);
   const renderCardContent = useCallback(() => {
     return (
-      <Content>
+      <div className={styles.content}>
         <p
-          className="githubCardContentP"
+          className={styles.contentP}
           style={{
             WebkitLineClamp: descriptionLine,
           }}
         >
           {description}
         </p>
-      </Content>
+      </div>
     );
   }, [description, descriptionLine]);
   const renderCardFooter = useCallback(() => {
     return (
-      <Footer>
-        <FooterStatus>
+      <div className={styles.footer}>
+        <span className={styles.footerStatus}>
           {watchSVG} Watch <strong>{watchers_count}</strong>
-        </FooterStatus>
-        <FooterStatus>
+        </span>
+        <span className={styles.footerStatus}>
           {starSVG} Stars <strong>{stars_count}</strong>
-        </FooterStatus>
-        <FooterStatus>
+        </span>
+        <span className={styles.footerStatus}>
           {forkSVG} Forks <strong>{forks_count}</strong>
-        </FooterStatus>
-        <Spacer />
-        <FooterDate>
+        </span>
+        <div className={styles.spacer} />
+        <span className={`${styles.footerStatus} ${styles.update}`}>
           {updateSVG} {pushed_at}
-        </FooterDate>
-      </Footer>
+        </span>
+      </div>
     );
   }, [watchers_count, stars_count, pushed_at, forks_count]);
 
   return (
-    <Card
+    <div
+      className={styles.card}
       style={{
         margin: center ? "0 auto" : "",
       }}
@@ -300,7 +200,7 @@ function RepoCard({
       {renderCardHeader()}
       {renderCardContent()}
       {renderCardFooter()}
-    </Card>
+    </div>
   );
 }
 

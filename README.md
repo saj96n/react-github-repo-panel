@@ -33,7 +33,9 @@ A beautiful card that displays Github repository infos.
 1. import
 
    ```javascript
-   import import { RepoCard } from 'react-repo-widget'
+   import { RepoCard } from "react-repo-widget";
+   
+   import "react-repo-widget/dist-esm/styles.css";
    ```
 
 1. use
@@ -43,28 +45,37 @@ A beautiful card that displays Github repository infos.
    repo prop data structure
    ```ts
    repo: {
-    name: string;
-    owner: {
-      avatarUrl: string;
-      login: string;
-    };
-    description: string;
-    forks: { totalCount: number };
-    primaryLanguage: { name: string };
-    licenseInfo: { spdxId: string };
-    pushedAt: string;
-    stargazerCount: number;
-    watchers: { totalCount: number };
-    }
+     name: string;
+     owner: {
+       avatarUrl: string;
+       login: string;
+     }
+     description: string;
+     forks: {
+       totalCount: number;
+     }
+     primaryLanguage: {
+       name: string;
+     }
+     licenseInfo: {
+       spdxId: string;
+     }
+     pushedAt: string;
+     stargazerCount: number;
+     watchers: {
+       totalCount: number;
+     }
+   }
    ```
 
 ## Settings 🔨
 
-|     Parameter     |  Type   | Default | Description                                 |
-| :---------------: | :-----: | :-----: | :------------------------------------------ |
-|      `repo`       | Object  |   ""    | Repository data.                            |
-|     `center`      | Boolean |  false  | If card is aligned center.                  |
-|  `squareAvatar`   | Boolean |  false  | If avatar is displayed with square outline. |
-| `descriptionLine` | Number  |    2    | The maximum line of repo description.       |
-|  `showLanguage`   | Boolean |  true   | If the repo language is displayed.          |
-|   `showLicense`   | Boolean |  true   | If the repo license is displayed.           |
+|     Parameter     |  Type   |    Default    | Description                                 |
+| :---------------: | :-----: | :-----------: | :------------------------------------------ |
+|      `repo`       | Object  |      ""       | Repository data.                            |
+|    `className`    | String  | "repo-widget" | Widget className                            |
+|     `center`      | Boolean |     false     | If card is aligned center.                  |
+|  `squareAvatar`   | Boolean |     false     | If avatar is displayed with square outline. |
+| `descriptionLine` | Number  |       2       | The maximum line of repo description.       |
+|  `showLanguage`   | Boolean |     true      | If the repo language is displayed.          |
+|   `showLicense`   | Boolean |     true      | If the repo license is displayed.           |

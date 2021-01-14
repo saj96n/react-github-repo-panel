@@ -174,19 +174,19 @@ function RepoCard({
   const renderCardFooter = useCallback(() => {
     return (
       <div className={`${className}__footer`}>
-        <span className={`footerStatus`}>
-          {watchSVG} Watch <strong>{watchers_count}</strong>
-        </span>
-        <span className={`footerStatus`}>
-          {starSVG} Stars <strong>{stars_count}</strong>
-        </span>
-        <span className={`footerStatus`}>
-          {forkSVG} Forks <strong>{forks_count}</strong>
-        </span>
+        <div className={`footerStatus`}>
+          {watchSVG} <span>Watch</span> <strong>{watchers_count}</strong>
+        </div>
+        <div className={`footerStatus`}>
+          {starSVG} <span>Stars</span> <strong>{stars_count}</strong>
+        </div>
+        <div className={`footerStatus`}>
+          {forkSVG} <span>Forks</span> <strong>{forks_count}</strong>
+        </div>
         <div className={`${className}__spacer`} />
-        <span className={`footerStatus update`}>
-          {updateSVG} {pushed_at}
-        </span>
+        <div className={`footerStatus update`}>
+          {updateSVG} <span>{pushed_at}</span>
+        </div>
       </div>
     );
   }, [watchers_count, stars_count, pushed_at, forks_count]);

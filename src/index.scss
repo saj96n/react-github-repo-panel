@@ -95,6 +95,11 @@
       text-transform: uppercase;
       color: #555;
       line-height: 1.2;
+      display: flex;
+      align-items: center;
+      > span {
+        margin: 0 2px;
+      }
     }
     > .update {
       padding-right: 0;

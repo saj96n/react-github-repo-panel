@@ -156,6 +156,7 @@ function RepoCard({
     showLanguage,
     showLicense,
     squareAvatar,
+    className,
   ]);
   const renderCardContent = useCallback(() => {
     return (
@@ -170,7 +171,7 @@ function RepoCard({
         </p>
       </div>
     );
-  }, [description, descriptionLine]);
+  }, [description, descriptionLine, className]);
   const renderCardFooter = useCallback(() => {
     return (
       <div className={`${className}__footer`}>
@@ -189,7 +190,7 @@ function RepoCard({
         </div>
       </div>
     );
-  }, [watchers_count, stars_count, pushed_at, forks_count]);
+  }, [watchers_count, stars_count, pushed_at, forks_count, className]);
 
   return (
     <div

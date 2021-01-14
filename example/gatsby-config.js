@@ -3,5 +3,5 @@ module.exports = {
   siteMetadata: {
     title: "example",
   },
-  plugins: ["gatsby-plugin-typescript"],
+  plugins: ["gatsby-plugin-typescript", "gatsby-plugin-sass"],
 };

@@ -9,9 +9,7 @@ import {
 } from "./svglib";
 import { githubColors } from "./colors";
 
-// import styled from "styled-components";
-
-import styles from "./index.module.css";
+import "./index.scss";
 
 function solveCount(count) {
   const countNumber = parseInt(count);
@@ -29,6 +27,8 @@ function solveCount(count) {
   return countString;
 }
 
+const _defaultClass = "repo-widget";
+
 function RepoCard({
   repo,
   center = false,
@@ -36,6 +36,7 @@ function RepoCard({
   descriptionLine = 2,
   showLanguage = true,
   showLicense = true,
+  className = _defaultClass,
 }: RepoCardProps) {
   const avatar_url = repo.owner.avatarUrl;
   const description = repo.description;
@@ -56,7 +57,7 @@ function RepoCard({
     let renderLanguage =
       showLanguage && language !== undefined && language !== null;
     let languageSpan = renderLanguage ? (
-      <span className={styles.headerStatus} key="1">
+      <span className={`${className}__headerStatus`} key="1">
         <span
           style={{
             backgroundColor: githubColors[language],
@@ -68,7 +69,7 @@ function RepoCard({
     let renderLicense =
       showLicense && license !== undefined && license !== "NOASSERTION";
     let licenseSpan = renderLicense ? (
-      <span className={styles.headerStatus} key="2">
+      <span className={`${className}__headerStatus`} key="2">
         {licenseSVG}
         <strong>{license}</strong>
       </span>
@@ -77,7 +78,7 @@ function RepoCard({
       (renderLanguage && renderLicense && repoName.length > 15) ||
       ((renderLanguage || renderLicense) && repoName.length > 20) ? (
         <p
-          className={styles.cardP}
+          className={`${className}__cardP`}
           style={{
             marginTop: "-7px",
             transform: "translateX(-3px)",
@@ -89,7 +90,7 @@ function RepoCard({
       ) : undefined;
     let firstLineChildren = [
       <a
-        className={styles.repo}
+        className={`${className}__repo`}
         key="0"
         href={repoLink}
         target="_blank"
@@ -107,7 +108,7 @@ function RepoCard({
     return (
       <div>
         <a
-          className={styles.avatar}
+          className={`${className}__avatar`}
           style={{
             marginTop: secondLine ? "7px" : "",
           }}
@@ -124,19 +125,19 @@ function RepoCard({
           />
         </a>
         <a
-          className={styles.buttonStar}
+          className={`${className}__buttonStar`}
           href={repoLink}
           target="_blank"
           rel="noopener"
         >
           Star {githubSVG}
         </a>
-        <p className={styles.cardP}>{firstLineChildren}</p>
+        <p className={`${className}__cardP`}>{firstLineChildren}</p>
         {secondLine}
-        <p className={styles.cardP}>
+        <p className={`${className}__cardP`}>
           Created by&nbsp;
           <a
-            className={styles.creator}
+            className={`${className}__creator`}
             href={userLink}
             target="_blank"
             rel="noopener"
@@ -158,9 +159,9 @@ function RepoCard({
   ]);
   const renderCardContent = useCallback(() => {
     return (
-      <div className={styles.content}>
+      <div className={`${className}__content`}>
         <p
-          className={styles.contentP}
+          className={`${className}__contentP`}
           style={{
             WebkitLineClamp: descriptionLine,
           }}
@@ -172,18 +173,18 @@ function RepoCard({
   }, [description, descriptionLine]);
   const renderCardFooter = useCallback(() => {
     return (
-      <div className={styles.footer}>
-        <span className={styles.footerStatus}>
+      <div className={`${className}__footer`}>
+        <span className={`footerStatus`}>
           {watchSVG} Watch <strong>{watchers_count}</strong>
         </span>
-        <span className={styles.footerStatus}>
+        <span className={`footerStatus`}>
           {starSVG} Stars <strong>{stars_count}</strong>
         </span>
-        <span className={styles.footerStatus}>
+        <span className={`footerStatus`}>
           {forkSVG} Forks <strong>{forks_count}</strong>
         </span>
-        <div className={styles.spacer} />
-        <span className={`${styles.footerStatus} ${styles.update}`}>
+        <div className={`${className}__spacer`} />
+        <span className={`footerStatus update`}>
           {updateSVG} {pushed_at}
         </span>
       </div>
@@ -192,7 +193,7 @@ function RepoCard({
 
   return (
     <div
-      className={styles.card}
+      className={className}
       style={{
         margin: center ? "0 auto" : "",
       }}
@@ -224,6 +225,7 @@ interface RepoCardProps {
   descriptionLine: number;
   showLanguage: boolean;
   showLicense: boolean;
+  className: string;
 }
 
 export { RepoCard };

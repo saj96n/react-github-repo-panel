@@ -19,5 +19,13 @@ export default {
       sourcemap: true,
     },
   ],
-  plugins: [postcss(), typescript(), commonjs()],
+  plugins: [
+    postcss({
+      extract: "styles.css",
+      minimize: true,
+      sourceMap: true,
+    }),
+    typescript(),
+    commonjs(),
+  ],
 };

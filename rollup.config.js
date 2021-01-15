@@ -1,6 +1,7 @@
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
 import commonjs from "@rollup/plugin-commonjs";
+import { terser } from "rollup-plugin-terser";
 
 export default {
   external: ["react", "react/jsx-runtime"],
@@ -27,5 +28,6 @@ export default {
     }),
     typescript(),
     commonjs(),
+    terser()
   ],
 };

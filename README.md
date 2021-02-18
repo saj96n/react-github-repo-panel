@@ -24,25 +24,30 @@ A beautiful card that displays Github repository infos.
 
 ## How to Use 🍕
 
-1. install
+1. Install
 
    ```shell
    npm i react-repo-widget
    ```
 
-1. import
+1. Import one component
 
    ```javascript
-   import { RepoCard } from "react-repo-widget";
-   
+   import { RepoCard } from "react-repo-widget"; // Pass repo data to the component
+   import { RepoCardFetch } from "react-repo-widget"; // Fetch data from the GitHub
+
    import "react-repo-widget/dist-esm/styles.css";
    ```
 
-1. use
+1. Use
+   ```javascript
+   <RepoCardFetch login={username} reponame={repository}>
+   ```
+   **or**
    ```javascript
    <RepoCard repo={repoData} />
    ```
-   repo prop data structure
+   repo prop data structure:
    ```ts
    repo: {
      name: string;
@@ -70,12 +75,14 @@ A beautiful card that displays Github repository infos.
 
 ## Settings 🔨
 
-|     Parameter     |  Type   |    Default    | Description                                 |
-| :---------------: | :-----: | :-----------: | :------------------------------------------ |
-|      `repo`       | Object  |      ""       | Repository data.                            |
-|    `className`    | String  | "repo-widget" | Widget className                            |
-|     `center`      | Boolean |     false     | If card is aligned center.                  |
-|  `squareAvatar`   | Boolean |     false     | If avatar is displayed with square outline. |
-| `descriptionLine` | Number  |       2       | The maximum line of repo description.       |
-|  `showLanguage`   | Boolean |     true      | If the repo language is displayed.          |
-|   `showLicense`   | Boolean |     true      | If the repo license is displayed.           |
+|     Parameter     |  Type   |    Default    | Description                                                |
+| :---------------: | :-----: | :-----------: | :--------------------------------------------------------- |
+|      `login`      | String  |      ""       | GitHub username. **Required** for RepoCardFetch component! |
+|    `reponame`     | String  |      ""       | Repository name. **Required** for RepoCardFetch component! |
+|      `repo`       | Object  |      ""       | Repository data. **Required** for RepoCard component!      |
+|    `className`    | String  | "repo-widget" | Widget className                                           |
+|     `center`      | Boolean |     false     | If card is aligned center.                                 |
+|  `squareAvatar`   | Boolean |     false     | If avatar is displayed with square outline.                |
+| `descriptionLine` | Number  |       2       | The maximum line of repo description.                      |
+|  `showLanguage`   | Boolean |     true      | If the repo language is displayed.                         |
+|   `showLicense`   | Boolean |     true      | If the repo license is displayed.                          |
